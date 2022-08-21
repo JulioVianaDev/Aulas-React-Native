@@ -49,6 +49,12 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  item:{
+    margin:10,
+    backgroundColor: '#ff2ff2',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
 });
 
 export const linhas = StyleSheet.create({
@@ -73,4 +79,10 @@ export const textos = StyleSheet.create({
     fontStyle: 'italic',
     margin: 10,
 }
+})
+export const button = StyleSheet.create({
+  button:{
+    width: 50,
+    height: 50,
+  }
 })

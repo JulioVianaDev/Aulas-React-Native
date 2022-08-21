@@ -1,38 +1,50 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Button, Linking,Image } from 'react-native';
-import {styles,textos,linhas} from './estilos/estilos'
+import { StyleSheet, Text, View,Button, Linking,Image, TextInputBase } from 'react-native';
+import {styles,textos,button,} from './estilos/estilos'
+import { useState } from 'react';
 export default function App() {
+  const usuario = 'Tomate batata'
+  const [estado,setEstado] = useState('Não me mude por favor') 
+  const [verdadeiro,setVerdadeiro] = useState(false)
+  const [Items,setItems] = useState([
+    {key: 1, item: 'sapato'},
+    {key: 2, item: 'tenis'},
+    {key: 3, item: 'chinelo'},
+    {key: 4, item: 'sandalha'},
+    {key: 5, item: 'sapatilha'},
+    {key: 6, item: 'bota'},
+    {key: 7, item: 'coturno'},
+  ])
+
+  const Clicado=()=>{
+    setItems([...Items, {key: 8, item: 'Sapato da cinderela'}])
+  }
   return (
     <View style={styles.body}>
-      <View style={linhas.linha}>
-        <View style={styles.view1}>
-          <Text style={textos.description}>1</Text>
-        </View>
-        <View style={styles.view2}>
-          <Text style={textos.description}>2</Text>
-        </View>
-        <View style={styles.view3}>
-          <Text style={textos.description}>3</Text>
-        </View>
-      </View>
-      <View style={linhas.linha}>
-        <View style={styles.view4}>
-          <Text style={textos.description}>4</Text>
-        </View>
-      </View>
-      <View style={linhas.linha}>
-        <View style={styles.view5}>
-          <Text style={textos.description}>5</Text>
-        </View>
-      </View>
-      <View style={linhas.superlinha}>
-        <View style={styles.view6}>
-          <Text style={textos.description}>6</Text>
-        </View>
-        <View style={styles.view7}>
-          <Text style={textos.description}>7</Text>
-        </View>
-      </View>
-  </View>
+      <Text style={textos.description}> oi {usuario}</Text>
+      <Text style={textos.description}> {estado}</Text>
+      <Button style={button.button} 
+              onPress={()=>setEstado('Já mudei o resultado')}
+              title='Pressione se quiser mudar'
+      />
+      <Text style={textos.description}>{verdadeiro ? 'Sim voce está certo' : 'Você está errado' }</Text>
+    <Button style={button.button} 
+            onPress={()=>setVerdadeiro(true)}
+            title='está certo?'
+    />
+          {
+            Items.map((objeto)=>{
+              return(
+                <View style={styles.item} key={objeto.key}>
+                  <Text style={textos.description}>{objeto.item}</Text>
+                </View>
+              )
+            })
+          }
+          <Button style={button.button}
+                  onPress={()=>Clicado()}
+                  title='acidionar item'
+          />
+    </View>
   );
 }
