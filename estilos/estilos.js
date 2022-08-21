@@ -8,44 +8,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   view1: {
-    flex: 1,
     backgroundColor: '#00ffff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  view2: {
-    flex: 2,
-    backgroundColor: '#ff00ff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  view3: {
-    flex: 3,
-    backgroundColor: '#ffff00',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  view4: {
-    flex: 1,
-    backgroundColor: '#ff0000',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  view5: {
-    flex: 1,
-    backgroundColor: '#0fff0f',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  view6: {
-    flex: 1,
-    backgroundColor: '#ffffff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  view7: {
-    flex: 1,
-    backgroundColor: '#0000ff',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -57,21 +20,6 @@ export const styles = StyleSheet.create({
   }
 });
 
-export const linhas = StyleSheet.create({
-  linha: {
-    flexDirection: 'row',
-    backgroundColor: '#ffffff',
-    alignItems: 'stretch',
-    justifyContent: 'center',
-  },
-  superlinha: {
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: '#ffffff',
-    alignItems: 'stretch',
-    justifyContent: 'center',
-  },
-})
 export const textos = StyleSheet.create({
   description: {
     color:'#000000',
@@ -84,5 +32,29 @@ export const button = StyleSheet.create({
   button:{
     width: 50,
     height: 50,
+    margin: 10
+  }
+})
+
+export const input = StyleSheet.create({
+  input:{
+    width: 200,
+    borderWidth:1,
+    borderColor: '#555',
+    borderRadius:5,
+    textAlign: 'center',
+    fontSize: 20,
+  }
+})
+
+export const campoCadastro = StyleSheet.create({
+  global:{
+    margin:50
+  },
+  resultado:{
+    backgroundColor: '#f22f',
+    margin: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 })
