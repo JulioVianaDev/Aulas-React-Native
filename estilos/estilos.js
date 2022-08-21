@@ -23,6 +23,7 @@ export  const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 20,
+    
   },
   view3:{
     margin:10,
