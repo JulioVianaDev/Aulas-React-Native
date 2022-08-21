@@ -1,70 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Button, Linking,Image, TextInput } from 'react-native';
-import {styles,textos,button,input,campoCadastro} from './estilos/estilos'
-import { useState } from 'react';
+import { Text, View,   } from 'react-native';
+import {styles,} from './estilos/estilos'
+import { useState,useEffect } from 'react';
 export default function App() {
-  const [name,setName]= useState('')
-  const [idade,setIdade] = useState(0)
-  const [profissao,setProfissao] = useState('')
-  const [show,setShow] = useState(false)
-  const Clicado = ()=>{
-    setShow(true)
-  }
-  const ClicadoCancelar = ()=>{
-    setShow(false)
-  }
+  const [filmes,setFilmes] = useState([])
+  const url = 'https://ghibliapi.herokuapp.com'
+  useEffect(()=>{
+    fetch(`${url}/films`)
+    .then(res => res.json())
+    .then(data=>{
+      data.forEach(movie=>{
+        console.log(movie.title)
+        console.log(movie.description)
+        console.log(movie.release_date)
+      })
+      setFilmes(data)
+    })
+    .catch(error => console.log("o erro veio no meu use effect com o fetch, o erro foi: ",error))
+    console.log(filmes)
+  },[])
   return (
-    <View style={styles.body}>
-      <View style={styles.view1}>
-        <Text style={textos.description}>Cadastro de Clientes</Text>
-      </View>
-      <View style={campoCadastro.global}>
-        <Text style={textos.description}>
-          Digite seu Nome
-        </Text>
-        <TextInput
-          placeholder='ex.. Tomate'
-          style={input.input}
-          onChangeText={(value)=>setName(value)}
-        />
-        <Text style={textos.description} >
-            Digite sua Idade
-        </Text>
-        <TextInput 
-          placeholder='ex.. 22'
-          style={input.input}
-          onChangeText={(value)=>setIdade(value)}
-        />
-        <Text style={textos.description} >
-          Sua profissão
-        </Text>
-        <TextInput 
-          placeholder='ex.. Jogador de Volei'
-          style={input.input}
-          onChangeText={(value)=>setProfissao(value)}
-        />
-        <Button
-          title='Cadastre-se'
-          onPress={()=>Clicado()}
-          style={button.button}
-        />
-      </View>
-      <View>
-        {
-          show  ? 
-          <View style={campoCadastro.resultado}>
-            <Text style={textos.description} >Seu nome: {name} </Text>
-            <Text style={textos.description} >Sua idade {idade}</Text>
-            <Text style={textos.description} >Sua profissão {profissao}</Text>
-            
-            <Button
-              title='Cancel'
-              onPress={()=>ClicadoCancelar()}
-              style={button.button}
-            />
-          </View> : <View></View> 
-        }
-      </View>
+    <View style={styles.fundo}>
+      
     </View>
   );
 }

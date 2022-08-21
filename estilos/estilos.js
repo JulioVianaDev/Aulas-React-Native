@@ -1,60 +1,8 @@
 import { StyleSheet  } from "react-native";
 export const styles = StyleSheet.create({
-  body: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#f7ff',
-    alignItems: 'stretch',
-    justifyContent: 'flex-start',
-  },
-  view1: {
-    backgroundColor: '#00ffff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  item:{
-    margin:10,
-    backgroundColor: '#ff2ff2',
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
+ fundo:{
+  backgroundColor: '#323E40',
+  flex: 1
+ }
+  
 });
-
-export const textos = StyleSheet.create({
-  description: {
-    color:'#000000',
-    fontSize: 35,
-    fontStyle: 'italic',
-    margin: 10,
-}
-})
-export const button = StyleSheet.create({
-  button:{
-    width: 50,
-    height: 50,
-    margin: 10
-  }
-})
-
-export const input = StyleSheet.create({
-  input:{
-    width: 200,
-    borderWidth:1,
-    borderColor: '#555',
-    borderRadius:5,
-    textAlign: 'center',
-    fontSize: 20,
-  }
-})
-
-export const campoCadastro = StyleSheet.create({
-  global:{
-    margin:50
-  },
-  resultado:{
-    backgroundColor: '#f22f',
-    margin: 15,
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-})
