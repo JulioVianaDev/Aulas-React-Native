@@ -1,20 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,Button, Linking,Image } from 'react-native';
-import logo from './imagens/logo.png'
-import luffy from './imagens/luffy.png'
+import { styles,textos } from './estilos/estilos';
 export default function App() {
   return (
     <View style={styles.container}>
-      
+      <View style={styles.view1}>
+        <Text style={textos.Titulo}>
+          Texto do meu titulo
+        </Text>
+      </View>
+      <View style={styles.view2}>
+        <View style={styles.view3}>
+          <Text style={textos.description}>Segunda View</Text>
+        </View>
+        <Button title='bem vindo'></Button>
+      </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f0ff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
