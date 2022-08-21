@@ -1,43 +1,43 @@
 import { StyleSheet } from "react-native";
-export const textos = StyleSheet.create({
-  textoflat:{
-    color: '#fff',
-    fontSize: 30,
-    fontStyle: 'italic',
-  }
-})
-export const flat = StyleSheet.create({
-  view1:{
+
+export  const styles = StyleSheet.create({
+  container: {
     flex: 1,
+    backgroundColor: '#f0ff',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#ff2f'
+  },
+  view1:{
+    backgroundColor: '#ff6',
+    width: '80%',
+    height: '20%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    marginBottom: 25,
   },
   view2:{
-    flex: 1,
+    backgroundColor: '#5ff',
+    width: '80%',
+    height: '20%',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#f7ff'
+    borderRadius: 20,
   },
   view3:{
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#1ff'
+    margin:10,
+    marginBottom:40,
+  }
+});
+
+export const textos = StyleSheet.create({
+  Titulo:{
+    fontSize: 24,
+    fontWeight: 'bold',
   },
-  view4:{
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#12ff'
-  },
-})
-export const app = StyleSheet.create({
-  app:{
-    flex: 1,
-    backgroundColor: '#f2f',
-    alignItems: 'stretch',
-    justifyContent: 'center',
-    flexDirection: 'column-reverse',
+  description:{
+    fontSize: 14,
+    color: '#FFFFFF',
+    fontWeight: 'bold',
   }
 })
