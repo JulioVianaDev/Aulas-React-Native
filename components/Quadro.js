@@ -1,27 +1,12 @@
-import {View,Text,Image,FlatList,Pressable,Alert,ToastAndroid,Modal ,TouchableOpacity} from 'react-native';
+import {View,Text,Image,Pressable,Modal ,TouchableOpacity} from 'react-native';
 import {styles,flat} from '../estilos/estilos';
 import { useState} from 'react';
 import { Escolhido } from './Escolhido';
 export const Quadro = ({filme})=>{
-  const {showModal,setShowModal} = useState(false);
   const [escolhido,setEscolhido] = useState('');
-  console.log(filme)
+  // console.log(filme)
   return(
     <>
-    {/* <Modal  visible={showModal} 
-            transparent 
-            onRequestClose={()=>
-            setShowModal(false)
-            }
-            animationType='slide'
-            hardwareAccelerated
-    >
-      <Pressable
-        onPress={()=>setShowModal(false)}
-      >
-        <Text>ok</Text>
-      </Pressable>
-    </Modal> */}
     <Pressable  onPress={()=>setEscolhido(filme)}>
         <View style={flat.quadro}>
           <Text  style={flat.titulo}>
@@ -36,7 +21,7 @@ export const Quadro = ({filme})=>{
           </Text>
         </View>
       </Pressable>
-      <Modal visible={escolhido}>
+      <Modal visible={escolhido != ""}>
         <Escolhido
           escolhido = {escolhido}
         />
