@@ -1,9 +1,10 @@
-import {View,Text,Image,Pressable,Modal ,TouchableOpacity} from 'react-native';
+import {View,Text,Image,FlatList,Pressable,Modal ,TouchableOpacity} from 'react-native';
 import {styles,flat} from '../estilos/estilos';
 import { useState} from 'react';
 import { Escolhido } from './Escolhido';
 export const Quadro = ({filme})=>{
   const [escolhido,setEscolhido] = useState('');
+  
   // console.log(filme)
   return(
     <>
