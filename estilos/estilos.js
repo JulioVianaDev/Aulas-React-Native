@@ -31,3 +31,29 @@ export const flat = StyleSheet.create({
   }
 })
 
+export const EstiloEscolhido = StyleSheet.create({
+  titulo:{
+    fontFamily: 'normal',
+    fontSize: 24,
+    color: '#F2A922',
+  },
+  view:{
+    backgroundColor: '#732002',
+    flex: 1,
+    alignItems: 'center',
+  },
+  image:{
+    width: 400,
+    height: 250,
+    borderRadius:6,
+  },
+  textoGeral:{
+    fontFamily: 'normal',
+    fontSize: 18,
+    color: '#F2A922',
+  },
+  voltar:{
+    color: "#fff",
+    fontSize: 20,
+  }
+})
